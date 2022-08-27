@@ -5,7 +5,7 @@ This repository is a proof of concept of algorithms described in [AB-HT: An Ense
 
 ## Installation
 
-Clone repo and install requirements.txt in a Python>=3.8.0 environment.
+Clone repo and install requirements.txt in a $ python>=3.8.0 environment.
 
 ```console
 $ git clone https://github.com/mahendradata/ab-ht.git # clone
@@ -39,31 +39,31 @@ Then run the experimental programs, for example:
 Running the `AB-HT` program:
 
 ```console
-python AB-HT.py conf/AB-HT.json outputs/AB-HT.log
+$ python AB-HT.py conf/AB-HT.json outputs/AB-HT.log
 ```
 
 Running the `HT` program:
 
 ```console
-python HT.py conf/HT.json outputs/HT.log
+$ python HT.py conf/HT.json outputs/HT.log
 ```
 
 Running the `HATT` program:
 
 ```console
-python HATT.py conf/HATT.json outputs/HATT.log
+$ python HATT.py conf/HATT.json outputs/HATT.log
 ```
 
 Running the `DT` program:
 
 ```console
-python DT.py conf/DT.json outputs/DT.log
+$ python DT.py conf/DT.json outputs/DT.log
 ```
 
 Running the `AB-DT` program:
 
 ```console
-python AB-DT.py conf/AB-DT.json outputs/AB-DT.log
+$ python AB-DT.py conf/AB-DT.json outputs/AB-DT.log
 ```
  
 
