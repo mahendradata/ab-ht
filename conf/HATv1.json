@@ -1,0 +1,17 @@
+{
+  "version": "0.1",
+  "datasets": [
+    "/lab/dbms/mahendra.data/phd/cic-ids2017/CIC-IDS2017-MachineLearning/Monday-Tuesday-WorkingHours.pcap_ISCX.csv",
+    "/lab/dbms/mahendra.data/phd/cic-ids2017/CIC-IDS2017-MachineLearning/Wednesday-workingHours.pcap_ISCX.csv",
+    "/lab/dbms/mahendra.data/phd/cic-ids2017/CIC-IDS2017-MachineLearning/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "/lab/dbms/mahendra.data/phd/cic-ids2017/CIC-IDS2017-MachineLearning/Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+    "/lab/dbms/mahendra.data/phd/cic-ids2017/CIC-IDS2017-MachineLearning/Friday-WorkingHours-Morning.pcap_ISCX.csv",
+    "/lab/dbms/mahendra.data/phd/cic-ids2017/CIC-IDS2017-MachineLearning/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+    "/lab/dbms/mahendra.data/phd/cic-ids2017/CIC-IDS2017-MachineLearning/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv"
+    ],
+  "grace_period": 2000,
+  "split_confidence": 1e-5,
+  "split_criterion": "gini",
+  "leaf_prediction": "nb",
+  "nb_threshold": 10
+}
