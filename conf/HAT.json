@@ -11,5 +11,7 @@
     ],
   "grace_period": 2000,
   "split_confidence": 1e-5,
-  "split_criterion": "gini"
+  "split_criterion": "gini",
+  "leaf_prediction": "nb",
+  "nb_threshold": 10
 }

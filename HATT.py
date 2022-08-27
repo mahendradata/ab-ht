@@ -3,7 +3,7 @@
 # Author: Mahendra Data - mahendra.data@ub.ac.id
 # License: BSD 3 clause
 #
-# Example: python3 HATT.py conf/HATT.json outputs/HATT.csv
+# Example: python HATT.py conf/HATT.json outputs/HATT.log
 # --------------------------------------------------------------
 
 import argparse
@@ -11,10 +11,10 @@ import pprint
 
 from river import tree
 
-from eil.configuration import Configuration
-from eil.model.incremental import evaluate_model
-from eil.util import Log
-from eil.dataset import IncrementalData
+from lib.configuration import Configuration
+from lib.model.incremental import evaluate_model
+from lib.util import Log
+from lib.dataset import IncrementalData
 
 # Parse arguments
 parser = argparse.ArgumentParser(description="CIC-IDS2017 classification using ExtremelyFastDecisionTreeClassifier.")

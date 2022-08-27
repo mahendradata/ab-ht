@@ -1,3 +1,5 @@
 /.vscode
 __pycache__
 /outputs
+/datasets/CIC-IDS2017-MachineLearning
+/datasets/CIC-IDS2017-MachineLearning.zip

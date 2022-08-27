@@ -3,7 +3,7 @@
 # Author: Mahendra Data - mahendra.data@ub.ac.id
 # License: BSD 3 clause
 #
-# Example: python3 DecisionTree.py conf/DecisionTree.json outputs/DecisionTree.csv
+# Example: python DT.py conf/DT.json outputs/DT.log
 # --------------------------------------------------------------
 
 import argparse
@@ -11,10 +11,10 @@ import pprint
 
 from sklearn.tree import DecisionTreeClassifier
 
-from eil.configuration import Configuration
-from eil.util import Log
-from eil.model.batch import evaluate_model
-from eil.dataset import BatchData
+from lib.configuration import Configuration
+from lib.util import Log
+from lib.model.batch import evaluate_model
+from lib.dataset import BatchData
 
 
 # Parse arguments

@@ -3,7 +3,7 @@
 # Author: Mahendra Data - mahendra.data@ub.ac.id
 # License: BSD 3 clause
 #
-# Example: python3 Ada-DecisionTree.py conf/Ada-DecisionTree.json outputs/Ada-DecisionTree.csv
+# Example: python AB-DT.py conf/AB-DT.json outputs/AB-DT.log
 # --------------------------------------------------------------
 
 import argparse
@@ -12,10 +12,10 @@ import pprint
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.tree import DecisionTreeClassifier
 
-from eil.configuration import Configuration
-from eil.util import Log
-from eil.model.batch import evaluate_model
-from eil.dataset import BatchData
+from lib.configuration import Configuration
+from lib.util import Log
+from lib.model.batch import evaluate_model
+from lib.dataset import BatchData
 
 
 # Parse arguments

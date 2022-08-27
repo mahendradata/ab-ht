@@ -3,7 +3,7 @@
 # Author: Mahendra Data - mahendra.data@ub.ac.id
 # License: BSD 3 clause
 #
-# Example: python3 HT.py conf/HT.json outputs/HT.csv
+# Example: python HT.py conf/HT.json outputs/HT.log
 # --------------------------------------------------------------
 
 import argparse
@@ -11,10 +11,10 @@ import pprint
 
 from river import tree
 
-from eil.configuration import Configuration
-from eil.util import Log
-from eil.model.incremental import evaluate_model
-from eil.dataset import IncrementalData
+from lib.configuration import Configuration
+from lib.util import Log
+from lib.model.incremental import evaluate_model
+from lib.dataset import IncrementalData
 
 
 # Parse arguments

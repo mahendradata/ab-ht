@@ -9,7 +9,5 @@
     "./datasets/CIC-IDS2017-MachineLearning/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
     "./datasets/CIC-IDS2017-MachineLearning/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv"
     ],
-  "grace_period": 2000,
-  "split_confidence": 1e-5,
-  "split_criterion": "gini"
+  "criterion": "gini"
 }

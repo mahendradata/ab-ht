@@ -1,12 +1,8 @@
-import numpy as np
-
-from river import stream
-
-from eil.dataset import IncrementalData
-from eil.util import Log, Timer, counter, report, confusion_matrix
+from lib.dataset import BatchData
+from lib.util import Log, Timer, counter, report, confusion_matrix
 
 
-def evaluate_model(name: str, model, dataset_paths: str, samples: IncrementalData, random_state=10):
+def evaluate_model(name: str, model, dataset_paths: str, samples: BatchData, random_state=10):
 
     batch = 0  # batch id
     for f in dataset_paths:
@@ -18,30 +14,23 @@ def evaluate_model(name: str, model, dataset_paths: str, samples: IncrementalDat
 
         # Train
         timer = Timer()
-        for x, y in stream.iter_pandas(train_x, train_y):
-            model.learn_one(x, y)
+        model.fit(train_x, train_y)
         Log.write("{}; training duration; {}; {}".format(name, counter(train_y), timer.stop()))
 
         # Evaluate
-        y_trues = list()
-        y_preds = list()
         timer = Timer()
-        for x, y in stream.iter_pandas(eval_x, eval_y):
-            y_trues.append(y)
-            y_preds.append(model.predict_one(x))  # Predict the evaluation data using the updated model
+        y_pred = model.predict(eval_x)
         duration = timer.stop()
         train_y_count = counter(train_y)
         Log.write("{}; evaluation duration; {}; {}".format(name, train_y_count, duration))
 
         # Make report
-        y_trues = np.array(y_trues)
-        y_preds = np.array(y_preds)
-        report_str, report_dict = report(y_trues, y_preds)  # Generate classification report
+        report_str, report_dict = report(eval_y, y_pred)  # Generate classification report
         Log.write_exp("{}.{}".format(name, batch), "eval", report_dict)
         Log.write(report_str)
 
         # Make confusion matrix
-        matrix = confusion_matrix(y_trues, y_preds)
+        matrix = confusion_matrix(eval_y, y_pred)
         Log.write("{}.{}; eval matrix; {}; Predicted:row / Actual:col;\n{}".format(name, batch, train_y_count, matrix))
         # noinspection PyTypeChecker
         matrix.to_csv("{}.{}.csv".format(Log.BASE_NAME, batch), index=True)
